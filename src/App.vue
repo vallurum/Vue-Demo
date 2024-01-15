@@ -1,43 +1,33 @@
+<template>
+  <div id="app">
+    <component :is="currentPage" @change-page="changePage" />
+  </div>
+</template>
+
 <script>
+import Home from "./Home.vue";
+import Contact from "./Contact.vue";
+import Demo from "./Demo.vue";
 
 export default {
-  // reactive state
   data() {
     return {
-      count: 0
-    }
+      currentPage: "home",
+    };
   },
-
-  // functions that mutate state and trigger updates
+  components: {
+    Home,
+    Contact,
+    Demo,
+  },
   methods: {
-    increment() {
-      this.count++
-    }
+    changePage(page) {
+      this.currentPage = page;
+    },
   },
-
-  // lifecycle hooks
-  mounted() {
-    console.log(`The initial count is ${this.count}.`)
-  }
-}
+};
 </script>
 
-<template>
-  <div  :style="{ 
-          height: '663.27px',
-          width:'1396.36px',
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center'}"
-    >
-    <a-image
-    :width="400"
-    src="https://www.design911.co.uk/uploads/D911-logo-private.png"
-    />
-    <a-button @click="increment">Demo</a-button >
-    <a-button @click="increment">Count is: {{ count }}</a-button >
-
-  </div>
-  
-</template>
+<style>
+/* Add your styles here if needed */
+</style>
