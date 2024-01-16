@@ -2,8 +2,8 @@
       
 
     <div  :style="{ 
-          height: '663.27px',
-          width:'1396.36px',
+          height: '551px',
+          width:'708px',
           alignItems: 'center',
           display: 'flex',
           flexDirection: 'column',
