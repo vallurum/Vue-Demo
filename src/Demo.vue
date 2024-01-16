@@ -105,7 +105,7 @@ export default {
       <div
         :style="{ 
          width: '40%',
-         height: '700px',
+         height: '551px',
          display: 'flex',
          flexDirection: 'column',
          alignItems: 'center',
