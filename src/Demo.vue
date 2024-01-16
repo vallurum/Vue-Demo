@@ -104,6 +104,8 @@ export default {
           <div><b :style="{color:'#eb6a2e' }">Front End tools:</b> Antd, Vue, Vite</div>
           <div><b :style="{color:'#eb6a2e' }">Backend tools: </b> Python, Flask</div>
           <div><b :style="{color:'#eb6a2e' }">Required: </b> Node.js</div>
+
+          <div><b :style="{color:'#eb6a2e' }">Effort: </b> 10 hrs</div>
         </div>
 
       </div>
