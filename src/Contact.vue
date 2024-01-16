@@ -1,8 +1,9 @@
 <template>
     <div>
-      <h1>Contact Page</h1>
-      <p>This is the contact page.</p>
-      <button @click="showHomePage">Go to Home</button>
+      <a-button @click="showHomePage"><- Home</a-button>
+      
+      <h2>Meghana Valluru</h2>
+      <button @click="downloadFile">Donwload</button>
     </div>
   </template>
   
@@ -12,6 +13,19 @@
       showHomePage() {
         this.$emit("change-page", "home");
       },
+
+      async downloadFile() {
+      const url = 'http://localhost:5000/download-docx';  // Adjust the URL based on your Flask server setup
+
+      // Create a hidden link to trigger the download
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'file.docx';
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      }
     },
   };
   </script>

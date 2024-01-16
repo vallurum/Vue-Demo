@@ -5,6 +5,7 @@ export default {
   // reactive state
   data() {
     return {
+      colorValue:50,
       data: [],
       columns:[
         {
@@ -50,6 +51,14 @@ export default {
     showDemoPage() {
       this.$emit("change-page", "Demo");
     },
+    getColor() {
+      // You can customize this method to generate a color based on your requirements
+      return `rgba(235, 106, 46, ${this.colorValue*0.01})`;
+    },
+    handleChangeSlider(value){
+      this.colorValue = value;
+    }
+    
   },
 
   // lifecycle hooks
@@ -76,6 +85,12 @@ export default {
 }
 </script>
 
+<style>
+    .ant-slider-horizontal{
+      width:  200px !important;
+    }
+</style>
+
 <template>
   
     <div
@@ -99,13 +114,18 @@ export default {
         >
         <a-button @click="showHomePage">Home</a-button >
 
+        <div>
+          <p>Try to change opacity</p>
+          <a-slider v-model="colorValue" :min="50" :max="100" :autofocus="true" @afterChange="handleChangeSlider" />
+        </div>  
+          
+        
         <div >
-          <div><b :style="{color:'#eb6a2e' }">Tech :</b> </div>
-          <div><b :style="{color:'#eb6a2e' }">Front End tools:</b> Antd, Vue, Vite</div>
-          <div><b :style="{color:'#eb6a2e' }">Backend tools: </b> Python, Flask</div>
-          <div><b :style="{color:'#eb6a2e' }">Required: </b> Node.js</div>
-
-          <div><b :style="{color:'#eb6a2e' }">Effort: </b> 10 hrs</div>
+          <div><b :style="{color:getColor() }">Tech :</b> </div>
+          <div><b :style="{color:getColor() }">Front End tools:</b> Antd, Vue, Vite</div>
+          <div><b :style="{color:getColor() }">Backend tools: </b> Python, Flask</div>
+          <div><b :style="{color:getColor() }">Required: </b> Node.js</div>
+          <div><b :style="{color:getColor() }">Effort: </b> 10 hrs</div>
         </div>
 
       </div>
