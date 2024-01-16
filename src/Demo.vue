@@ -87,7 +87,7 @@ export default {
 
 <style>
     .ant-slider-horizontal{
-      width:  200px !important;
+      width:  500px !important;
     }
 </style>
 
