@@ -3,7 +3,7 @@
 
     <div  :style="{ 
           height: '551px',
-          width:'1078px',
+          width:'5037px',
           alignItems: 'center',
           display: 'flex',
           flexDirection: 'column',
