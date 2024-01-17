@@ -3,7 +3,7 @@
       <a-button @click="showHomePage"><- Home</a-button>
       
       <h2>Meghana Valluru</h2>
-      <button @click="downloadFile">Donwload</button>
+      <a-button @click="downloadFile">Donwload</a-button>
     </div>
   </template>
   
